@@ -202,13 +202,14 @@
             <p>Get personalized advice from Ali Erdem, our AI expert, to explore how AI can benefit your business.</p>
             <div class="consultation-form">
                 <h2>Book Your Session</h2>
-                <form id="consultationForm">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                <!-- Updated Formspree Form -->
+                <form id="consultationForm" action="https://formspree.io/f/xkgobpbo" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <input type="hidden" name="_next" value="https://aiworkshopllc.netlify.app/thank-you">
                     <button type="submit">Schedule Now</button>
                 </form>
-                <p id="confirmationMessage" style="display: none; color: green;">Thank you! We will contact you shortly.</p>
             </div>
         </div>
         <div id="contact" class="section">
@@ -230,12 +231,5 @@
             <a href="#contact">Contact</a>
         </div>
     </footer>
-    <script>
-        document.getElementById('consultationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('consultationForm').reset();
-            document.getElementById('confirmationMessage').style.display = 'block';
-        });
-    </script>
 </body>
 </html>
